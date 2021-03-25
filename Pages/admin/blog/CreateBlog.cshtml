@@ -1,0 +1,19 @@
+﻿@page
+@model FirstASPNetCoreWebsite.Pages.admin.auther.CreateBlogModel
+@{
+}
+
+<form method="post">
+    <input asp-for="Auther.ID" />
+    <div>
+        <label asp-for="Auther.Date"></label>
+        <input asp-for="Auther.Date" />
+        <span asp-validation-for="Auther.Date"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Name"></label>
+        <select asp-for="Auther.Name" asp-items="Model.AutherList"></select>
+        <span asp-validation-for="Auther.Name"></span>
+    </div>
+</form>
+

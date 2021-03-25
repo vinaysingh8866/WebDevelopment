@@ -1,0 +1,117 @@
+﻿@page
+@model FirstASPNetCoreWebsite.Pages.NewPageModel
+@{
+    ViewData["Title"] = "New Page";
+    //string query = string.Empty;
+
+    //if (ViewData.ContainsKey("Q"))
+    //{
+    //    query = ViewData["Q"].ToString();
+    //}
+}
+
+
+
+<form method="post">
+    @*<input type="text" name="name" value="@Model.Auther.Name" autocomplete="given_name" />
+        <input type="email" name="email" value="@Model.Auther.Email" autocomplete="email" />*@
+    <input asp-for="Auther.ID" />
+    <div>
+        <label asp-for="Auther.Name"></label>
+        <input asp-for="Auther.Name" />
+        <span asp-validation-for="Auther.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.LastName"></label>
+        <input asp-for="Auther.LastName" />
+        <span asp-validation-for="Auther.LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Email"></label>
+        <input asp-for="Auther.Email" />
+        <span asp-validation-for="Auther.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Password"></label>
+        <input asp-for="Auther.Password" />
+        <span asp-validation-for="Auther.Password"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.PhoneNumber"></label>
+        <input asp-for="Auther.PhoneNumber" />
+        <span asp-validation-for="Auther.PhoneNumber"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Date"></label>
+        <input asp-for="Auther.Date" />
+        <span asp-validation-for="Auther.Date"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.WebsiteAddress"></label>
+        <input asp-for="Auther.WebsiteAddress" />
+        <span asp-validation-for="Auther.WebsiteAddress"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Country"></label>
+        <input asp-for="Auther.Country" />
+        <span asp-validation-for="Auther.Country"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.Province"></label>
+        <input asp-for="Auther.Province" />
+        <span asp-validation-for="Auther.Province"></span>
+    </div>
+    <div>
+        <label asp-for="Auther.PostalCode"></label>
+        <input asp-for="Auther.PostalCode" />
+        <span asp-validation-for="Auther.PostalCode"></span>
+    </div>
+
+
+    <input type="submit" value="Submit" />
+</form>
+
+
+
+<div asp-validation-summary="All"></div>
+
+    @section Scripts
+    {
+        <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    }
+
+
+
+
+    <h1>Your IP Address is @HttpContext.Connection.RemoteIpAddress.ToString()</h1>
+        <h1>Routes</h1>
+        @foreach (var item in PageContext.RouteData.Values)
+        {
+
+            <dl>
+                <dt>@item.Key</dt>
+                <dd>@item.Value</dd>
+            </dl>
+        }
+
+        <h1>Headers</h1>
+        @foreach (var item in Request.Headers)
+        {
+
+            <dl>
+                <dt>@item.Key</dt>
+                <dd>@item.Value</dd>
+            </dl>
+        }
+
+        <section>
+            <h1>This is a new page.</h1>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <img src="https://www.placecage.com/200/300/" alt="" />
+        </section>
